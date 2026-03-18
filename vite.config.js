@@ -4,9 +4,12 @@ import babel from '@rolldown/plugin-babel'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: "/p41/",
   plugins: [
     react(),
     babel({ presets: [reactCompilerPreset()] })
   ],
-  base: "/p41"
+  build: {
+    outDir: "docs"
+  }
 })
