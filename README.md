@@ -1,18 +1,37 @@
-# React + Vite
+# TicketFind
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+TicketFind is a small React app built with Vite.
 
-Currently, two official plugins are available:
+## How to run the project
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+1. Install dependencies:
 
-## React Compiler
+```bash
+npm install
+```
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+Why we use it:
+This downloads the packages the project needs, like React and Vite.
 
-Note: This will impact Vite dev & build performances.
+2. Build the project:
 
-## Expanding the ESLint configuration
+```bash
+npm run build
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Why we use it:
+This creates the production version of the app. In this project, the built files go into the `docs/` folder for GitHub Pages.
+
+3. Start the local development server:
+
+```bash
+npm run dev
+```
+
+Why we use it:
+This runs the app locally so you can open it in your browser, test changes, and see updates while you work.
+
+## GitHub Pages
+
+GitHub Pages does not run Vite for you.
+It only serves the static files created by `npm run build`, which is why the `docs/` folder matters.
