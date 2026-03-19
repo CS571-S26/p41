@@ -1,5 +1,4 @@
 export default function HomePage() {
-
   return (
     <div className="home-page">
       <section className="hero-section">
@@ -12,12 +11,15 @@ export default function HomePage() {
           </p>
 
           <div className="hero-section__actions">
-            <a href="#categories" className="button-link button-link--primary">Browse categories</a>
-            <a href="#how-it-works" className="button-link button-link--secondary">How it works</a>
+            <a href="#categories" className="button-link button-link--primary">
+              Browse categories
+            </a>
+            <a href="#how-it-works" className="button-link button-link--secondary">
+              How it works
+            </a>
           </div>
-         </div>
-
-          </section>
         </div>
-        )
+      </section>
+    </div>
+  )
 }
