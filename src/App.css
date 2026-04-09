@@ -7,8 +7,6 @@
 }
 
 .site-header {
-  position: sticky;
-  top: 0;
   z-index: 10;
   backdrop-filter: blur(12px);
   background: rgba(248, 251, 255, 0.88);
@@ -23,16 +21,13 @@
 }
 
 .site-header__inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
   padding: 1rem 0;
 }
 
 .site-brand {
   text-decoration: none;
   color: inherit;
+  margin-right: 1rem;
 }
 
 .site-brand__name {
@@ -49,22 +44,28 @@
 }
 
 .site-nav {
-  display: flex;
-  align-items: center;
   gap: 1rem;
 }
 
-.site-nav a {
+.site-nav .nav-link {
   text-decoration: none;
   color: #345066;
   font-weight: 600;
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
 }
 
-.site-nav__button {
-  padding: 0.75rem 1.1rem;
-  border-radius: 999px;
+.site-nav .nav-link.active {
   background: #183042;
-  color: #f8fbff !important;
+  color: #f8fbff;
+}
+
+.site-header .navbar-toggler {
+  border-color: rgba(24, 48, 66, 0.16);
+}
+
+.site-header .navbar-toggler:focus {
+  box-shadow: 0 0 0 0.2rem rgba(13, 96, 135, 0.14);
 }
 
 .site-main {
@@ -257,6 +258,239 @@
 .site-footer {
   padding: 0 0 2.5rem;
   color: #567189;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.content-page {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.content-section {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.content-page h1 {
+  font-size: clamp(2.2rem, 7vw, 3.8rem);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  color: #102635;
+}
+
+.page-intro {
+  max-width: 48rem;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #4b677d;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.info-grid--triple {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.info-card {
+  border-radius: 1.4rem;
+  background: rgba(255, 255, 255, 0.84);
+  border: 1px solid rgba(24, 48, 66, 0.09);
+  box-shadow: 0 10px 30px rgba(24, 48, 66, 0.08);
+  overflow: hidden;
+}
+
+.info-card .card-body {
+  padding: 1.5rem;
+}
+
+.info-card h2,
+.info-card .card-title {
+  margin-bottom: 0.75rem;
+  font-size: 1.12rem;
+  color: #102635;
+}
+
+.info-card p,
+.info-card .card-text {
+  color: #567189;
+  line-height: 1.65;
+  margin-bottom: 0;
+}
+
+.info-card__footer {
+  background: rgba(223, 242, 255, 0.8);
+  color: #0d6087;
+  font-weight: 700;
+  border-top: 1px solid rgba(24, 48, 66, 0.08);
+}
+
+.event-list,
+.plan-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.featured-event-card,
+.plan-card {
+  border-radius: 1.4rem;
+  border: 1px solid rgba(24, 48, 66, 0.09);
+  box-shadow: 0 10px 30px rgba(24, 48, 66, 0.08);
+}
+
+.featured-event-card .card-body,
+.plan-card .card-body {
+  padding: 1.5rem;
+}
+
+.featured-event-card__top,
+.plan-card__price-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.featured-event-card__badge {
+  border-radius: 999px;
+  padding: 0.45rem 0.75rem;
+}
+
+.featured-event-card h3,
+.plan-card h3 {
+  margin-bottom: 0.65rem;
+  color: #102635;
+}
+
+.featured-event-card__price,
+.plan-card__price {
+  font-weight: 800;
+  color: #0d6087;
+}
+
+.featured-event-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  color: #567189;
+  font-size: 0.95rem;
+}
+
+.plan-card .list-group-item {
+  border-color: rgba(24, 48, 66, 0.08);
+  color: #345066;
+}
+
+.plan-card--featured {
+  background: linear-gradient(180deg, rgba(223, 242, 255, 0.72) 0%, rgba(255, 255, 255, 0.95) 100%);
+}
+
+.plan-card__label {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.7rem;
+  border-radius: 999px;
+  background: #183042;
+  color: #f8fbff;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.plan-card__button {
+  width: 100%;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.deals-panel {
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(24, 48, 66, 0.08);
+}
+
+.deals-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+.deal-chip {
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  background: #dff2ff;
+  color: #0d6087;
+  font-weight: 700;
+}
+
+.subscription-highlight {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) auto;
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1.75rem;
+  border-radius: 1.75rem;
+  background:
+    radial-gradient(circle at top right, rgba(116, 198, 255, 0.25), transparent 35%),
+    linear-gradient(135deg, #163349 0%, #24516f 100%);
+  color: #f8fbff;
+  box-shadow: 0 24px 60px rgba(17, 34, 48, 0.16);
+}
+
+.subscription-highlight h2 {
+  margin: 1rem 0 0.75rem;
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+}
+
+.subscription-highlight p {
+  color: rgba(248, 251, 255, 0.78);
+  line-height: 1.7;
+  margin: 0;
+  max-width: 42rem;
+}
+
+.subscription-highlight__button {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.95rem 1.35rem;
+  background: #f8fbff;
+  color: #183042;
+  font-weight: 700;
+}
+
+.subscription-highlight__button:hover,
+.subscription-highlight__button:focus {
+  background: #eaf4fb;
+  color: #183042;
+}
+
+@media (max-width: 780px) {
+  .hero-section,
+  .info-grid,
+  .info-grid--triple,
+  .event-list,
+  .plan-grid,
+  .category-grid,
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .subscription-highlight {
+    grid-template-columns: 1fr;
+  }
+
+  .site-brand__tag {
+    max-width: 16rem;
+  }
 }
 
 .site-footer p {

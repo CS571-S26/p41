@@ -1,12 +1,17 @@
 import { Routes, Route } from 'react-router-dom'
 import HomePage from './pages/HomePage.jsx'
+import EventsPage from './pages/EventsPage.jsx'
+import SubscriptionPage from './pages/SubscriptionPage.jsx'
 import Layout from './components/Layout.jsx'
 
 function App() {
   return (
     <Routes>
+      {/* Shared layout for all pages */}
       <Route element={<Layout />}>
         <Route index element={<HomePage />} />
+        <Route path="/events" element={<EventsPage />} />
+        <Route path="/subscription" element={<SubscriptionPage />} />
       </Route>
     </Routes>
   )
