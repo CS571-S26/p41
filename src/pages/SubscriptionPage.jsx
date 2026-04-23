@@ -6,7 +6,7 @@ import SectionIntro from '../components/SectionIntro.jsx'
 // Core perks highlighted in the subscription pitch
 const benefits = [
   {
-    title: 'Fast Lane entry for high-demand events',
+    title: 'Fast Lane entry when events draw huge crowds',
     description:
       'Subscribers can skip long lines and move through entry faster when major concerts, games, or festivals draw big crowds.',
   },
@@ -21,7 +21,7 @@ const benefits = [
       'The subscription feels valuable because users are not waiting until the busiest ticket window opens.',
   },
   {
-    title: 'Subscriber-only discounts and promotions',
+    title: 'Discounts and promotions for subscribers',
     description:
       'Deals add another incentive for frequent eventgoers who want to save money across multiple outings.',
   },
@@ -31,9 +31,9 @@ export default function SubscriptionPage() {
   return (
     <section className="content-page">
       <SectionIntro
-        eyebrow="Ticketfinder Plus"
+        eyebrow="TicketFinder Plus"
         title="Premium perks for people who go out often."
-        description="The subscription plan supports one of the most important ideas in your proposal: giving frequent event attendees a faster and more convenient experience when popular events are in high demand."
+        description="Members get a more convenient experience for busy nights in Madison: Fast Lane, earlier windows, and more value, modeled in this app with a working local plan state you can try below."
       />
 
       <div className="info-grid">

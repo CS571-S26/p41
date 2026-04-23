@@ -4,10 +4,10 @@ import EventsPage from './pages/EventsPage.jsx'
 import SubscriptionPage from './pages/SubscriptionPage.jsx'
 import Layout from './components/Layout.jsx'
 
+// Layout wraps every route: header, <Outlet />, footer.
 function App() {
   return (
     <Routes>
-      {/* Shared layout for all pages */}
       <Route element={<Layout />}>
         <Route index element={<HomePage />} />
         <Route path="/events" element={<EventsPage />} />

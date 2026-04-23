@@ -1,15 +1,19 @@
 import { NavLink, Outlet } from 'react-router-dom'
-import { Container, Nav, Navbar } from 'react-bootstrap'
+import { Badge, Container, Nav, Navbar } from 'react-bootstrap'
+import { usePreferences } from '../context/PreferencesContext.jsx'
 import '../App.css'
 
 export default function Layout() {
+  const { savedEventIds } = usePreferences()
+  const nSaved = savedEventIds.length
+
   return (
     <div className="site-shell">
       {/* Main site navigation */}
       <Navbar expand="lg" className="site-header" sticky="top">
         <Container className="site-header__inner">
           <Navbar.Brand as={NavLink} to="/" className="site-brand">
-            <span className="site-brand__name">Ticketfinder</span>
+            <span className="site-brand__name">TicketFinder</span>
             <span className="site-brand__tag">Madison events, deals, and subscriber perks in one place</span>
           </Navbar.Brand>
 
@@ -19,8 +23,13 @@ export default function Layout() {
               <Nav.Link as={NavLink} to="/" end>
                 Home
               </Nav.Link>
-              <Nav.Link as={NavLink} to="/events">
+              <Nav.Link as={NavLink} to="/events" className="d-flex align-items-center gap-2">
                 Events
+                {nSaved > 0 && (
+                  <Badge bg="primary" pill>
+                    {nSaved} saved
+                  </Badge>
+                )}
               </Nav.Link>
               <Nav.Link as={NavLink} to="/subscription">
                 Subscription
@@ -36,7 +45,7 @@ export default function Layout() {
       </main>
 
       <footer className="site-footer">
-        <p>Ticketfinder helps Madison residents discover local events, promotions, and premium ticket perks.</p>
+        <p>TicketFinder helps Madison residents discover local events, promotions, and optional Plus perks in this demo.</p>
       </footer>
     </div>
   )

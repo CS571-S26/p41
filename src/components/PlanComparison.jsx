@@ -1,61 +1,107 @@
-import { Button, Card, ListGroup } from 'react-bootstrap'
+import { useState } from 'react'
+import { Alert, Button, Card, ListGroup, Stack } from 'react-bootstrap'
+import { usePreferences } from '../context/PreferencesContext.jsx'
 
-// Simple free vs premium plan comparison
-const plans = [
+const planDefs = [
   {
-    name: 'Free Plan',
+    name: 'Free',
+    id: 'free',
     price: '$0',
-    description: 'Good for casual users who mainly want to browse local events and buy tickets when needed.',
-    perks: ['Browse Madison events', 'View recommendations', 'Buy standard tickets'],
+    description: 'For casual use: browse Madison events, get recommendations, and use the demo ticket flow.',
+    perks: ['Browse featured events and filters', 'Personalized recommendation order', 'Save events you like'],
     emphasis: false,
   },
   {
-    name: 'Ticketfinder Plus',
+    name: 'TicketFinder Plus',
+    id: 'plus',
     price: '$8/mo',
-    description:
-      'Built for people who go out often and want earlier access, better convenience, and extra value.',
-    perks: ['Fast Lane entry', 'Early access windows', 'Subscriber-only discounts'],
+    description: 'For frequent goers: earlier access, convenience at the door, and more value on repeat trips.',
+    perks: ['Fast Lane entry', 'Early access and priority windows', 'Subscriber discounts and fee perks in the demo'],
     emphasis: true,
   },
 ]
 
 export default function PlanComparison() {
+  const { plan, setPlan } = usePreferences()
+  const [notice, setNotice] = useState(null)
+
   return (
-    <section className="content-section">
+    <section className="content-section" aria-label="Plan comparison">
+      {notice != null && (
+        <Alert variant="success" dismissible onClose={() => setNotice(null)} className="mb-3">
+          {notice}
+        </Alert>
+      )}
+
       <div className="section-heading">
-        <h2>Why the subscription feels worth offering</h2>
-        <p>
-          A simple plan comparison helps explain the business idea behind Ticketfinder and makes the premium
-          option feel intentional rather than tacked on.
-        </p>
+        <h2>Pick the plan you want to try in this demo</h2>
+        <p>Your choice is stored locally. It also unlocks Plus benefits in the ticket and deals demos.</p>
       </div>
 
       <div className="plan-grid">
-        {plans.map((plan) => (
-          <Card key={plan.name} className={`plan-card${plan.emphasis ? ' plan-card--featured' : ''}`}>
-            <Card.Body>
-              <div className="plan-card__price-row">
-                <div>
-                  <Card.Title as="h3">{plan.name}</Card.Title>
-                  <p className="plan-card__price">{plan.price}</p>
+        {planDefs.map((def) => {
+          const active = plan === def.id
+          return (
+            <Card
+              key={def.name}
+              className={`plan-card${def.emphasis ? ' plan-card--featured' : ''} ${active ? 'plan-card--active' : ''}`}
+            >
+              <Card.Body>
+                <div className="plan-card__price-row">
+                  <div>
+                    <Card.Title as="h3">{def.name}</Card.Title>
+                    <p className="plan-card__price">{def.price}</p>
+                  </div>
+                  {def.emphasis ? <span className="plan-card__label">Full perks</span> : null}
+                  {active && (
+                    <span className="badge text-bg-primary align-self-start">Current</span>
+                  )}
                 </div>
-                {plan.emphasis ? <span className="plan-card__label">Most useful</span> : null}
-              </div>
-              <Card.Text>{plan.description}</Card.Text>
-            </Card.Body>
-            <ListGroup variant="flush">
-              {plan.perks.map((perk) => (
-                <ListGroup.Item key={perk}>{perk}</ListGroup.Item>
-              ))}
-            </ListGroup>
-            <Card.Body>
-              <Button variant={plan.emphasis ? 'dark' : 'outline-dark'} className="plan-card__button">
-                {plan.emphasis ? 'Choose Plus' : 'Stay Free'}
-              </Button>
-            </Card.Body>
-          </Card>
-        ))}
+                <Card.Text>{def.description}</Card.Text>
+              </Card.Body>
+              <ListGroup variant="flush">
+                {def.perks.map((p) => (
+                  <ListGroup.Item key={p}>{p}</ListGroup.Item>
+                ))}
+              </ListGroup>
+              <Card.Body>
+                {def.id === 'free' ? (
+                  <Button
+                    variant="outline-dark"
+                    className="plan-card__button"
+                    onClick={() => {
+                      setPlan('free')
+                      setNotice('You are on the free plan. Preferences stay on this device.')
+                    }}
+                    disabled={active}
+                  >
+                    {active ? 'Using free' : 'Use free plan'}
+                  </Button>
+                ) : (
+                  <Button
+                    variant="dark"
+                    className="plan-card__button"
+                    onClick={() => {
+                      setPlan('plus')
+                      setNotice('You are on TicketFinder Plus. Fee perks in the ticket demo are enabled.')
+                    }}
+                    disabled={active}
+                  >
+                    {active ? 'Subscribed' : 'Try Plus in this demo'}
+                  </Button>
+                )}
+              </Card.Body>
+            </Card>
+          )
+        })}
       </div>
+
+      <Stack className="mt-3" gap={1}>
+        <p className="text-muted small mb-0">
+          Current: <strong>{plan === 'plus' ? 'TicketFinder Plus' : 'Free'}</strong>. Mock billing only; stored on
+          this device.
+        </p>
+      </Stack>
     </section>
   )
 }

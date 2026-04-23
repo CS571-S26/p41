@@ -30,7 +30,7 @@ export default function EventsPage() {
       <SectionIntro
         eyebrow="Events in Madison"
         title="Explore what is happening around the city."
-        description="Ticketfinder is meant to bring Madison events into one place so students, families, and visitors can compare options without jumping between different sites."
+        description="TicketFinder is meant to bring Madison events into one place so students, families, and visitors can compare options without jumping between different sites."
       />
 
       <div className="info-grid">

@@ -1,3 +1,5 @@
+import { Card } from 'react-bootstrap'
+
 const steps = [
   {
     number: '1',
@@ -12,7 +14,7 @@ const steps = [
   {
     number: '3',
     title: 'Choose perks if needed',
-    description: 'Upgrade for Fast Lane access, earlier ticket windows, and subscriber-only deals.',
+    description: 'Upgrade for Fast Lane access, earlier ticket windows, and deals meant for subscribers.',
   },
 ]
 
@@ -20,20 +22,24 @@ export default function HowItWorksSection() {
   return (
     <section id="how-it-works" className="home-section">
       <div className="section-heading">
-        <h2>How the platform is supposed to help users</h2>
+        <h2>How TicketFinder fits into a real night out</h2>
         <p>
-          This project is not just about showing events. It is about reducing the time and friction between
-          wanting to go out and deciding where to go.
+          Browsing, recommendations, and optional perks are connected so the path from &ldquo;I want to do
+          something&rdquo; to &ldquo;I have a plan&rdquo; is shorter in one place.
         </p>
       </div>
 
       <div className="steps-grid">
         {steps.map((step) => (
-          <article key={step.number} className="step-card">
-            <span className="step-number">{step.number}</span>
-            <strong>{step.title}</strong>
-            <p>{step.description}</p>
-          </article>
+          <Card key={step.number} className="step-card h-100 border-0">
+            <Card.Body>
+              <span className="step-number">{step.number}</span>
+              <Card.Title as="h3" className="h6 text-primary">
+                {step.title}
+              </Card.Title>
+              <Card.Text className="mb-0">{step.description}</Card.Text>
+            </Card.Body>
+          </Card>
         ))}
       </div>
     </section>

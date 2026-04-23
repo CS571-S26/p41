@@ -1,8 +1,50 @@
+/* Design tokens: warm editorial / lake-town evening */
+:root {
+  --tf-ink: #1c1917;
+  --tf-ink-muted: #57534e;
+  --tf-paper: #faf7f2;
+  --tf-paper-deep: #f3ebe3;
+  --tf-lake: #1e6d7a;
+  --tf-lake-muted: #2d8a9a;
+  --tf-lake-deep: #134249;
+  --tf-ember: #b9482d;
+  --tf-ember-glow: rgba(185, 72, 45, 0.14);
+  --tf-honey: #d4a03d;
+  --tf-dusk: #3d2f4a;
+  --tf-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --tf-body: 'Newsreader', Georgia, serif;
+  --tf-shadow: 0 18px 48px rgba(28, 25, 23, 0.09);
+  --tf-shadow-deep: 0 28px 70px rgba(28, 25, 23, 0.14);
+
+  --bs-primary: var(--tf-ember);
+  --bs-primary-rgb: 185, 72, 45;
+  --bs-body-font-family: var(--tf-body);
+  --bs-body-bg: var(--tf-paper);
+  --bs-body-color: var(--tf-ink);
+  --bs-border-radius: 1rem;
+  --bs-border-radius-lg: 1.35rem;
+  --bs-link-color: var(--tf-lake);
+  --bs-link-hover-color: var(--tf-lake-deep);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #eef4f8;
-  color: #183042;
+  font-family: var(--tf-body);
+  font-size: 1.0625rem;
+  font-weight: 450;
+  font-optical-sizing: auto;
+  background: var(--tf-paper);
+  color: var(--tf-ink);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -17,6 +59,11 @@ a {
   color: inherit;
 }
 
+::selection {
+  background: rgba(212, 160, 61, 0.28);
+  color: var(--tf-ink);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -26,4 +73,32 @@ h2,
 h3,
 p {
   margin: 0;
+}
+
+/* Fraunces for headings inside the app shell */
+.site-shell h1,
+.site-shell h2,
+.site-shell h3,
+.site-shell .navbar-brand .site-brand__name,
+.hero-section h1,
+.content-page > span.eyebrow + h1 {
+  font-family: var(--tf-display);
+  font-optical-sizing: auto;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: rgba(185, 72, 45, 0.45);
+  box-shadow: 0 0 0 0.2rem rgba(185, 72, 45, 0.15);
+}
+
+.modal-content {
+  border-radius: 1.25rem;
+  border: 1px solid rgba(87, 83, 78, 0.1);
+  box-shadow: var(--tf-shadow-deep);
+}
+
+.modal-header .modal-title {
+  font-family: var(--tf-display);
+  font-weight: 630;
 }

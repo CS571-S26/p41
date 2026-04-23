@@ -1,3 +1,6 @@
+import { Card } from 'react-bootstrap'
+import InterestSelector from './InterestSelector.jsx'
+
 const categories = [
   {
     title: 'Concerts',
@@ -19,17 +22,23 @@ export default function CategorySection() {
       <div className="section-heading">
         <h2>Browse the kinds of events people actually look for</h2>
         <p>
-          Ticketfinder works best when event discovery feels organized. These categories show how users can
-          move quickly from general interest to something they would realistically attend.
+          TicketFinder groups discovery so you can move from a broad interest to a specific night out
+          without jumping between sites and tabs.
         </p>
       </div>
 
+      <InterestSelector />
+
       <div className="category-grid">
         {categories.map((category) => (
-          <article key={category.title} className="category-card">
-            <strong>{category.title}</strong>
-            <p>{category.description}</p>
-          </article>
+          <Card key={category.title} className="category-card h-100 border-0">
+            <Card.Body>
+              <Card.Title as="h3" className="h6 mb-2 text-primary">
+                {category.title}
+              </Card.Title>
+              <Card.Text className="mb-0">{category.description}</Card.Text>
+            </Card.Body>
+          </Card>
         ))}
       </div>
     </section>
