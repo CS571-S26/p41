@@ -46,7 +46,7 @@ export default function HeroSection() {
             </li>
             <li>
               <strong>Optional Plus perks</strong>
-              <span>Fast Lane, early access, and subscriber offers in the demo.</span>
+              <span>Fast Lane, early access, and subscriber-only offers.</span>
             </li>
           </ul>
         </Card.Body>

@@ -45,7 +45,7 @@ export default function Layout() {
       </main>
 
       <footer className="site-footer">
-        <p>TicketFinder helps Madison residents discover local events, promotions, and optional Plus perks in this demo.</p>
+        <p>TicketFinder helps Madison residents discover local events, promotions, and optional Plus perks.</p>
       </footer>
     </div>
   )

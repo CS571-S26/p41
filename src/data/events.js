@@ -52,7 +52,7 @@ export const featuredEvents = [
     date: 'Saturday, 10:00 AM',
     price: 'Free with student ID',
     priceAmount: 0,
-    description: 'Clubs, demos, and tryouts in one day for the campus community.',
+    description: 'Clubs, showcases, and tryouts in one day for the campus community.',
     tags: ['sports', 'student', 'campus'],
   },
   {

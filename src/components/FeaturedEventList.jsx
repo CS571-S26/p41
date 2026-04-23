@@ -46,7 +46,7 @@ export default function FeaturedEventList() {
       <div className="section-heading">
         <h2>Explore events in Madison</h2>
         <p>
-          Search, filter, save listings, and try a demo ticket flow. Your saved events and plan choice
+          Search, filter, save listings, and open checkout from any card. Your saved events and plan choice
           persist in this browser.
         </p>
       </div>
@@ -135,7 +135,7 @@ export default function FeaturedEventList() {
                       size="sm"
                       onClick={() => setModalEvent(event)}
                     >
-                      {event.priceAmount === 0 || /free/i.test(event.price) ? 'Get tickets' : 'Try ticket demo'}
+                      Get tickets
                     </Button>
                   </Stack>
                 </Card.Body>

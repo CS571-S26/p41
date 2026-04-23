@@ -12,11 +12,11 @@ export default function SubscriptionHighlight() {
         <span className="eyebrow">Premium option</span>
         <h2>Fast Lane and early access for people who are out a lot in Madison</h2>
         <p>
-          Plus members get smoother entry when it is crowded, earlier ticket windows, and more value in the demo. Try
-          switching your plan to see the difference in deals and ticket checkout.
+          Plus members get smoother entry when it is crowded, earlier ticket windows, and extra value through checkout
+          perks. Try switching your plan to see the difference in deals and fees.
         </p>
         {isPlus && (
-          <p className="text-white-50 small mb-0">You are using the Plus demo. Explore perks below or compare plans.</p>
+          <p className="text-white-50 small mb-0">You are on TicketFinder Plus. Explore perks below or compare plans.</p>
         )}
       </div>
 

@@ -7,7 +7,7 @@ const planDefs = [
     name: 'Free',
     id: 'free',
     price: '$0',
-    description: 'For casual use: browse Madison events, get recommendations, and use the demo ticket flow.',
+    description: 'For casual use: browse Madison events, get recommendations, and use checkout when you pick an event.',
     perks: ['Browse featured events and filters', 'Personalized recommendation order', 'Save events you like'],
     emphasis: false,
   },
@@ -16,7 +16,7 @@ const planDefs = [
     id: 'plus',
     price: '$8/mo',
     description: 'For frequent goers: earlier access, convenience at the door, and more value on repeat trips.',
-    perks: ['Fast Lane entry', 'Early access and priority windows', 'Subscriber discounts and fee perks in the demo'],
+    perks: ['Fast Lane entry', 'Early access and priority windows', 'Subscriber discounts and checkout fee perks'],
     emphasis: true,
   },
 ]
@@ -34,8 +34,8 @@ export default function PlanComparison() {
       )}
 
       <div className="section-heading">
-        <h2>Pick the plan you want to try in this demo</h2>
-        <p>Your choice is stored locally. It also unlocks Plus benefits in the ticket and deals demos.</p>
+        <h2>Pick the plan that fits how often you go out</h2>
+        <p>Your choice is stored locally. It unlocks Plus benefits when you browse deals and complete checkout.</p>
       </div>
 
       <div className="plan-grid">
@@ -83,11 +83,11 @@ export default function PlanComparison() {
                     className="plan-card__button"
                     onClick={() => {
                       setPlan('plus')
-                      setNotice('You are on TicketFinder Plus. Fee perks in the ticket demo are enabled.')
+                      setNotice('You are on TicketFinder Plus. Checkout fee perks are enabled.')
                     }}
                     disabled={active}
                   >
-                    {active ? 'Subscribed' : 'Try Plus in this demo'}
+                    {active ? 'Subscribed' : 'Choose Plus'}
                   </Button>
                 )}
               </Card.Body>
