@@ -1,3 +1,4 @@
+// Free vs Plus cards; updates `plan` in context and shows dismissible notice.
 import { useState } from 'react'
 import { Alert, Button, Card, ListGroup, Stack } from 'react-bootstrap'
 import { usePreferences } from '../context/PreferencesContext.jsx'

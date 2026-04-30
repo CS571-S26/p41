@@ -1,3 +1,4 @@
+// Checkbox-style toggles; syncs `interests` array in PreferencesContext.
 import { ToggleButton, ToggleButtonGroup } from 'react-bootstrap'
 import { usePreferences } from '../context/PreferencesContext.jsx'
 
@@ -13,7 +14,9 @@ export default function InterestSelector() {
   return (
     <div className="interest-selector">
       <div className="section-heading interest-selector__head">
-        <h3 className="interest-selector__title">What do you like?</h3>
+        <h3 id="interest-selector-heading" className="interest-selector__title">
+          What do you like?
+        </h3>
         <p>
           Pick a few so we can tune recommendations and make browsing feel more personal. Your choices
           are saved in this browser.
@@ -23,6 +26,7 @@ export default function InterestSelector() {
         type="checkbox"
         value={interests}
         onChange={setInterests}
+        aria-labelledby="interest-selector-heading"
         className="interest-selector__toggles d-flex flex-wrap"
       >
         {OPTIONS.map((opt) => (

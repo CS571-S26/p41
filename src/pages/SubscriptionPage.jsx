@@ -1,3 +1,4 @@
+// Subscription page: benefit grid, plan picker, plan-filtered deals.
 import BenefitCard from '../components/BenefitCard.jsx'
 import DealsSection from '../components/DealsSection.jsx'
 import PlanComparison from '../components/PlanComparison.jsx'

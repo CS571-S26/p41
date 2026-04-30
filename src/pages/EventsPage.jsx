@@ -1,3 +1,4 @@
+// Events page: intro, static category cards, then interactive featured list.
 import EventCard from '../components/EventCard.jsx'
 import FeaturedEventList from '../components/FeaturedEventList.jsx'
 import SectionIntro from '../components/SectionIntro.jsx'

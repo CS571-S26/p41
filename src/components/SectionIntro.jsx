@@ -1,3 +1,4 @@
+// Shared page header: eyebrow span + h1 + intro paragraph.
 export default function SectionIntro({ eyebrow, title, description }) {
   return (
     <>

@@ -1,3 +1,4 @@
+// App shell: skip link, primary nav, routed main, footer.
 import { NavLink, Outlet } from 'react-router-dom'
 import { Badge, Container, Nav, Navbar } from 'react-bootstrap'
 import { usePreferences } from '../context/PreferencesContext.jsx'
@@ -7,8 +8,19 @@ export default function Layout() {
   const { savedEventIds } = usePreferences()
   const nSaved = savedEventIds.length
 
+  function handleSkipToContent(event) {
+    const main = document.getElementById('main-content')
+    if (!main) return
+    event.preventDefault() // hash alone does not always move focus
+    main.focus()
+    main.scrollIntoView({ block: 'start' })
+  }
+
   return (
     <div className="site-shell">
+      <a href="#main-content" className="skip-link" onClick={handleSkipToContent}>
+        Skip to main content
+      </a>
       {/* Main site navigation */}
       <Navbar expand="lg" className="site-header" sticky="top">
         <Container className="site-header__inner">
@@ -40,7 +52,7 @@ export default function Layout() {
       </Navbar>
 
       {/* Routed page content renders here */}
-      <main className="site-main">
+      <main id="main-content" className="site-main" tabIndex={-1}>
         <Outlet />
       </main>
 

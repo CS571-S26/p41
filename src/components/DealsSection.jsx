@@ -1,3 +1,4 @@
+// Promo chips; Plus-only rows appear when plan is plus.
 import { Badge, Stack } from 'react-bootstrap'
 import { usePreferences } from '../context/PreferencesContext.jsx'
 

@@ -1,6 +1,6 @@
+// App-wide preferences: interests, plan, saved event IDs; persisted in localStorage.
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react'
 
-// Client preferences: interests, subscription tier (free vs plus), saved event IDs. Persisted in localStorage.
 const STORAGE_KEY = 'ticketfind-preferences-v1'
 
 const defaultState = {

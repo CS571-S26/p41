@@ -1,7 +1,9 @@
+/* index.css: design tokens, Bootstrap theme map, base layout, form/modal accents. */
 /* Design tokens: warm editorial / lake-town evening */
 :root {
   --tf-ink: #1c1917;
-  --tf-ink-muted: #57534e;
+  /* ~7:1 on tf-paper for body-sized text (WCAG AA) */
+  --tf-ink-muted: #3f3b37;
   --tf-paper: #faf7f2;
   --tf-paper-deep: #f3ebe3;
   --tf-lake: #1e6d7a;
@@ -25,8 +27,11 @@
   --bs-border-radius-lg: 1.35rem;
   --bs-link-color: var(--tf-lake);
   --bs-link-hover-color: var(--tf-lake-deep);
+  --bs-secondary-color: var(--tf-ink-muted);
+  --bs-secondary-color-rgb: 63, 59, 55;
 }
 
+/* Shorten transitions/animations for users who prefer reduced motion. */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

@@ -1,3 +1,4 @@
+// Top-of-home hero and highlight card; anchors link to #categories / #recommendations.
 import { Button, Card } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 

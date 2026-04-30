@@ -1,4 +1,4 @@
-// Static catalog used by browse filters and the checkout modal (client-only app).
+// Mock event rows for filters, cards, and TicketPurchaseModal (no API).
 export const featuredEvents = [
   {
     id: 'terrace-sunset',

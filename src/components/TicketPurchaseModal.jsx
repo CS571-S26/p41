@@ -1,3 +1,4 @@
+// Demo modal: optional quantity, mock fees, fake confirmation (no payment).
 import { useState } from 'react'
 import { Button, Form, ListGroup, Modal, Stack } from 'react-bootstrap'
 

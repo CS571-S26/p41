@@ -1,3 +1,4 @@
+// Interest chips + three static category blurbs (home).
 import { Card } from 'react-bootstrap'
 import InterestSelector from './InterestSelector.jsx'
 

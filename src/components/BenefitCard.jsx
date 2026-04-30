@@ -1,3 +1,4 @@
+// One subscription perk (used on /subscription).
 import { Card } from 'react-bootstrap'
 
 export default function BenefitCard({ title, description }) {

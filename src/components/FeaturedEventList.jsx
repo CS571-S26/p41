@@ -1,3 +1,4 @@
+// Filterable events table + save toggles + opens TicketPurchaseModal.
 import { useMemo, useState } from 'react'
 import { Badge, Button, Card, Col, Form, InputGroup, Row, Stack } from 'react-bootstrap'
 import { usePreferences } from '../context/PreferencesContext.jsx'

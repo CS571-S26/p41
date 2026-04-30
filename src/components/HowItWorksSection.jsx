@@ -1,3 +1,4 @@
+// Three numbered steps (home).
 import { Card } from 'react-bootstrap'
 
 const steps = [

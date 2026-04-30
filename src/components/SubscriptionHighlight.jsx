@@ -1,3 +1,4 @@
+// Bottom home strip linking to /subscription; reflects Plus via context.
 import { Button, Stack } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { usePreferences } from '../context/PreferencesContext.jsx'
@@ -16,7 +17,9 @@ export default function SubscriptionHighlight() {
           perks. Try switching your plan to see the difference in deals and fees.
         </p>
         {isPlus && (
-          <p className="text-white-50 small mb-0">You are on TicketFinder Plus. Explore perks below or compare plans.</p>
+          <p className="subscription-highlight__note small mb-0">
+            You are on TicketFinder Plus. Explore perks below or compare plans.
+          </p>
         )}
       </div>
 

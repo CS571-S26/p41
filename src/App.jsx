@@ -1,10 +1,10 @@
+// Route definitions; Layout provides nav, skip link, and <Outlet /> for page bodies.
 import { Routes, Route } from 'react-router-dom'
 import HomePage from './pages/HomePage.jsx'
 import EventsPage from './pages/EventsPage.jsx'
 import SubscriptionPage from './pages/SubscriptionPage.jsx'
 import Layout from './components/Layout.jsx'
 
-// Layout wraps every route: header, <Outlet />, footer.
 function App() {
   return (
     <Routes>

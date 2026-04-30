@@ -1,3 +1,4 @@
+// Reorders static recommendation cards by overlap with selected interests.
 import { useMemo } from 'react'
 import { Alert } from 'react-bootstrap'
 import { usePreferences } from '../context/PreferencesContext.jsx'
@@ -81,6 +82,7 @@ export default function RecommendationSection() {
         {ordered.map((recommendation) => (
           <EventCard
             key={recommendation.title}
+            titleAs="h3"
             title={recommendation.title}
             description={recommendation.description}
             meta={recommendation.meta}

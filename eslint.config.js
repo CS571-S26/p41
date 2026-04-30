@@ -1,3 +1,4 @@
+// ESLint flat config: React + Vite refresh; context file disables component export rule.
 import js from '@eslint/js'
 import globals from 'globals'
 import reactHooks from 'eslint-plugin-react-hooks'
